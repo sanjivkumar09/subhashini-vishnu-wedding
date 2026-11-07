@@ -1,4 +1,4 @@
-# शुभाषिणी ♥ विष्णु — Interactive Wedding Invitation
+# सुभाषिणी ♥ विष्णु — Interactive Wedding Invitation
 
 A royal, modern, and animated static Hindi wedding invitation website. No build tools, backend, or paid hosting required.
 
@@ -18,8 +18,9 @@ A royal, modern, and animated static Hindi wedding invitation website. No build 
 Open `index.html` in any browser.
 
 ## Details included
-- **Bride**: शुभाषिणी (चि. सौ. का. शुभाषिणी)
+- **Bride**: सुभाषिणी (चि. सौ. का. सुभाषिणी)
 - **Groom**: विष्णु (चि. विष्णु)
+- **Family**: तोमर परिवार
 - **Main wedding / blessings & feast**: Thursday, 03 December 2026, 8:00 PM onwards
 - **Venue**: सामुदायिक भवन, ग्राम अमरपुर, जिला उमरिया (म.प्र.), बस स्टैंड, सामुदायिक स्वास्थ्य केन्द्र के सामने
 - **Ceremonies**: 02–04 December 2026
