@@ -423,7 +423,7 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   max-width: 620px;
-  margin: 0 auto 24px;
+  margin: 0 auto;
 }
 .timer-card {
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
@@ -462,13 +462,7 @@ a { color: inherit; text-decoration: none; }
   100% { transform: scale(1); }
 }
 
-.cal-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /* =========================================================
    GENERAL SECTIONS & TYPOGRAPHY
@@ -713,51 +707,7 @@ a { color: inherit; text-decoration: none; }
 }
 .bless-btn:active { transform: translateY(0); }
 
-/* Quick Wish Chips */
-.wish-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin: 20px 0 14px;
-}
-.chip {
-  padding: 7px 15px;
-  border: 1px solid rgba(197, 155, 76, 0.4);
-  background: #fffdf9;
-  border-radius: 999px;
-  font-size: 13px;
-  color: var(--ink-secondary);
-  cursor: pointer;
-  transition: background .2s, border-color .2s, transform .2s;
-}
-.chip:hover {
-  background: var(--gold-light);
-  color: var(--royal-wine);
-  border-color: var(--gold-primary);
-  transform: translateY(-1px);
-}
-.wish-input-box {
-  display: flex;
-  gap: 10px;
-  max-width: 560px;
-  margin: 14px auto 0;
-}
-.wish-input {
-  flex: 1;
-  padding: 11px 16px;
-  border: 1.5px solid var(--border-gold);
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 14px;
-  background: #fffdf9;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-}
-.wish-input:focus {
-  border-color: var(--royal-wine);
-  box-shadow: 0 0 0 3px rgba(74, 14, 35, 0.12);
-}
+
 
 /* =========================================================
    FOOTER
@@ -837,7 +787,6 @@ footer strong {
   .timer-num { font-size: 28px; }
   .timer-label { font-size: 11px; }
   .section { padding: 60px 14px; }
-  .wish-input-box { flex-direction: column; }
 }
 
 @media (max-width: 440px) {
@@ -993,14 +942,7 @@ footer strong {
       </div>
     </div>
 
-    <div class="cal-actions">
-      <button class="btn-primary" onclick="addToGoogleCalendar()">
-        <span>📅</span> Google Calendar में जोड़ें
-      </button>
-      <button class="btn-secondary" onclick="downloadIcsCalendar()">
-        <span>📥</span> फोन कैलेंडर (.ics)
-      </button>
-    </div>
+
   </div>
 </section>
 
@@ -1127,23 +1069,7 @@ footer strong {
         <span>🙏</span> <span>आशीर्वाद दें ♥</span>
       </button>
 
-      <!-- Pre-written auspicious wish chips -->
-      <div style="margin-top:20px;">
-        <span style="font-size:13px; color:var(--gold-muted); font-weight:600;">सुझावित मंगलकामनाएं:</span>
-        <div class="wish-chips">
-          <button class="chip" onclick="selectWish('नवदंपति को सुखद एवं मंगलमय वैवाहिक जीवन की हार्दिक शुभकामनाएं! 🌺')">सुखद वैवाहिक जीवन 🌺</button>
-          <button class="chip" onclick="selectWish('सदा खुश रहें, जोड़ी सदा सलामत रहे! ईश्वर का आशीर्वाद बना रहे। ✨')">जोड़ी सदा सलामत रहे ✨</button>
-          <button class="chip" onclick="selectWish('विवाह के शुभ अवसर पर पूरे परिवार को लख-लख बधाइयां! 🎊')">सपरिवार लख-लख बधाई 🎊</button>
-        </div>
-      </div>
 
-      <!-- WhatsApp Wish Box -->
-      <div class="wish-input-box">
-        <input type="text" id="custom-wish-input" class="wish-input" placeholder="अपनी मंगलकामना या नाम यहाँ लिखें..." value="नवदंपति को सुखद एवं मंगलमय वैवाहिक जीवन की हार्दिक शुभकामनाएं! 🌺">
-        <button class="btn-primary" onclick="sendWishViaWhatsApp()" style="padding:11px 20px;">
-          <span>💬</span> WhatsApp पर भेजें
-        </button>
-      </div>
     </div>
   </div>
 </section>
@@ -1351,48 +1277,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-/* -----------------------------------------------------------
-   3. CALENDAR ACTIONS
-   ----------------------------------------------------------- */
-function addToGoogleCalendar() {
-  const title = encodeURIComponent("शुभ विवाह: शुभाषिणी ♥ विष्णु");
-  const details = encodeURIComponent("शुभाषिणी एवं विष्णु के शुभ विवाह एवं आशीर्वाद समारोह में सपरिवार सादर आमंत्रित हैं।\n\nसमारोह: रात्रि 08:00 बजे से आपके आगमन तक।\nस्थान: सामुदायिक भवन, ग्राम अमरपुर, जिला उमरिया (म.प्र.)\nस्नेहाकांक्षी: कचेर परिवार (हीरा लाल कचेर, राकेश कचेर)");
-  const location = encodeURIComponent("सामुदायिक भवन, ग्राम अमरपुर, जिला उमरिया (मध्य प्रदेश)");
-  const dates = "20261203T143000Z/20261203T203000Z";
-  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
-  window.open(url, '_blank');
-  showToast('Google Calendar में खोला जा रहा है...');
-}
 
-function downloadIcsCalendar() {
-  const icsLines = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Subhashini Vishnu Wedding//HI',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'BEGIN:VEVENT',
-    'UID:wedding-subhashini-vishnu-20261203@invitation',
-    'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z',
-    'DTSTART:20261203T143000Z',
-    'DTEND:20261203T203000Z',
-    'SUMMARY:शुभ विवाह — शुभाषिणी ♥ विष्णु',
-    'DESCRIPTION:शुभाषिणी एवं विष्णु के शुभ विवाह एवं आशीर्वाद समारोह में सपरिवार सादर आमंत्रित हैं।',
-    'LOCATION:सामुदायिक भवन, ग्राम अमरपुर, जिला उमरिया (मध्य प्रदेश)',
-    'STATUS:CONFIRMED',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ];
-
-  const blob = new Blob([icsLines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'Shubh-Vivah-Subhashini-Vishnu.ics';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  showToast('कैलेंडर फाइल (.ics) डाउनलोड हो गई! ✓');
-}
 
 /* -----------------------------------------------------------
    4. BLESSINGS & WISHES
@@ -1424,21 +1309,6 @@ function giveBlessing(event) {
   showToast('🌸 आपका मंगलमय आशीर्वाद प्राप्त हुआ! हार्दिक धन्यवाद।');
 }
 
-function selectWish(text) {
-  const input = document.getElementById('custom-wish-input');
-  input.value = text;
-  input.focus();
-}
-
-function sendWishViaWhatsApp() {
-  const input = document.getElementById('custom-wish-input');
-  const wishText = input.value.trim() || 'शुभ विवाह की हार्दिक शुभकामनाएं!';
-  const fullMsg = `॥ श्री गणेशाय नमः ॥\n\n*शुभाषिणी ♥ विष्णु के शुभ विवाह हेतु मंगलकामनाएं:*\n"${wishText}"\n\n— कचेर परिवार, अमरपुर (उमरिया)`;
-  const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullMsg)}`;
-  window.open(waUrl, '_blank');
-  showToast('WhatsApp पर भेजा जा रहा है...');
-}
-
 function shareInvitation() {
   const shareTitle = "शुभ विवाह — शुभाषिणी ♥ विष्णु";
   const shareText = "॥ श्री गणेशाय नमः ॥\nशुभाषिणी एवं विष्णु के शुभ विवाह में सपरिवार सादर आमंत्रित हैं।\nगुरुवार, 03 दिसम्बर 2026 | अमरपुर, उमरिया (म.प्र.)\n\nडिजिटल आमंत्रण देखें:";
@@ -1452,7 +1322,7 @@ function shareInvitation() {
     }).catch(() => {});
   } else {
     navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
-      showToast('आमंत्रण लिंक कॉपी हो गया! WhatsApp पर शेयर करें ↗');
+      showToast('आमंत्रण लिंक कॉपी हो गया! ✓');
     }).catch(() => {
       showToast('कृपया लिंक कॉपी करके शेयर करें');
     });
