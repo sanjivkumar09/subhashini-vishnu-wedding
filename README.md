@@ -2,6 +2,9 @@
 
 A modern, highly interactive, and animated static Hindi wedding invitation website. No build tools, backend, or paid hosting required.
 
+## Live Website
+🌐 **[https://sanjivkumar09.github.io/subhashini-vishnu-wedding/](https://sanjivkumar09.github.io/subhashini-vishnu-wedding/)**
+
 ## Features
 - 🌸 **Interactive Petal Rain & Touch Bursts**: Realistic rose and marigold petals falling in the background, with interactive petal/sparkle bursts on screen taps and clicks. Includes a toggle to pause/play.
 - ⏳ **Live Countdown Timer**: Real-time ticking countdown to Thursday, 03 December 2026, 8:00 PM IST (Days, Hours, Minutes, Seconds) with animated card flips.
